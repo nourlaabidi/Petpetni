@@ -4,7 +4,6 @@ import 'pet_list.dart';
 import 'premium.dart';
 class Tips extends StatefulWidget {
   const Tips({super.key});
-
   @override
   State<Tips> createState() => _TipsState();
 }
@@ -27,26 +26,20 @@ class _TipsState extends State<Tips> {
             children: [
               
               Expanded(
-                flex:1,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/whitepaw.png"), 
-                  backgroundColor: Colors.transparent, 
-                ),
+              flex: 6,
+              child: Image(
+                image: AssetImage("assets/logoPetpetni.png"),
+                
               ),
+),
+
               SizedBox(width: 10.0,),
-              Expanded(
-                flex:4,
-                child: Text('Petpetni', style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 35.0,
-                fontFamily: "Gluten"
-                ),),
-              ),
+              
               Expanded (
                 flex:1,
                 child: CircleAvatar(
                 backgroundImage: AssetImage("assets/claudio.png"),
-                //backgroundColor: Colors.white, 
+                
   
                 ),
               ),

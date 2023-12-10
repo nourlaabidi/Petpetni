@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "217065850680",
+    "project_id": "petpetni-b6478",
+    "storage_bucket": "petpetni-b6478.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217065850680:android:74f6e695a57aac040fa3cd",
+        "android_client_info": {
+          "package_name": "com.example.projet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRAyu0ao68laJn1lXC9O5z58UjuPE31jA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
