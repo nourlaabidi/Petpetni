@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'HomePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,30 +8,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginDemo(),
+      home: Scaffold(
+        body: MyColumn(),
+      ),
     );
   }
 }
 
-class LoginDemo extends StatefulWidget {
-  @override
-  _LoginDemoState createState() => _LoginDemoState();
-}
-
-class _LoginDemoState extends State<LoginDemo> {
+class MyColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("Login Page"),
-      ),
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.fromLTRB(0, 60, 0, 40),
               child: Center(
                 child: Container(
                   width: 200,
@@ -42,6 +33,7 @@ class _LoginDemoState extends State<LoginDemo> {
               ),
             ),
             Container(
+              height: 438,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(30),
                 color: const Color(0xffd8d4d3),
@@ -82,8 +74,7 @@ class _LoginDemoState extends State<LoginDemo> {
                         child: TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Email',
-                            hintText: 'Enter valid email id as abc@gmail.com',
+                            hintText: 'Example: Petpetou@gmail.com',
                           ),
                         ),
                       ),
@@ -110,7 +101,6 @@ class _LoginDemoState extends State<LoginDemo> {
                               obscureText: true,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(),
-                                labelText: 'Password',
                                 hintText: 'Enter secure password',
                               ),
                             ),
@@ -138,12 +128,7 @@ class _LoginDemoState extends State<LoginDemo> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (_) => HomePage()),
-                        );
-                      },
+                      onPressed: () {},
                       child: const Text(
                         'Login',
                         style: TextStyle(color: Colors.white, fontSize: 25),

@@ -9,6 +9,39 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 237, 154, 9),
+            elevation: 2,
+            shadowColor: Colors.white,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.menu),
+                    iconSize: 35,
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  child: Image(
+                    image: AssetImage("asset/images/whitelogo.png"),
+                    width: 230,
+                  ),
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Container(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("asset/images/claudio.png"),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+              ],
+            )),
         body: MyColumn(),
       ),
     );
