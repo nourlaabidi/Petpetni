@@ -2,12 +2,14 @@ import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/model/event.dart';
-import 'package:projet/screens/add_event.dart';
+import 'package:projet/screens/calendar/add_event.dart';
+import 'package:projet/screens/calendar/edit_event.dart';
+import 'package:projet/screens/side_bar.dart';
 import 'package:table_calendar/table_calendar.dart';
 class EventCalendarScreen extends StatefulWidget {
   const EventCalendarScreen({Key? key}) : super(key: key);
 
-  @override
+  @override 
   State<EventCalendarScreen> createState() => _EventCalendarScreenState();
 }
 
@@ -46,39 +48,30 @@ List _getEventsForTheDay(DateTime day) {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 237, 154, 9),
-        elevation: 2, 
-        shadowColor: Colors.white, 
-         leading:
-          IconButton(
-            icon: const Icon(Icons.menu), 
-            color:Colors.white,
-            onPressed: () {/* Action à effectuer lors du clic sur l'icône*/},
-            ),
-          title: const Row(
-            children: [
-              
-              Expanded(
-              flex: 6,
-              child: Image(
-                image: AssetImage("assets/logoPetpetni.png"),
-                
-              ),
-),
-
-              SizedBox(width: 10.0,),
-              
-              Expanded (
-                flex:1,
-                child: CircleAvatar(
-                backgroundImage: AssetImage("assets/claudio.png"),
-                
-  
+            backgroundColor: Color.fromARGB(255, 237, 154, 9),
+            elevation: 2,
+            shadowColor: Colors.white,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  child: Image(
+                    image: AssetImage("assets/logoPetpetni.png"),
+                    width: 230,
+                  ),
                 ),
-              ),
-            ],
-          )
-      ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Container(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/claudio.png"),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+              ],
+            )),
       body: ListView(
         children: [
           TableCalendar(
@@ -143,52 +136,69 @@ List _getEventsForTheDay(DateTime day) {
           ),
           Column(
           children: _getEventsForTheDay(_selectedDate!).map(
-            (event) => ListTile(
-              title: Text(
-                event.title,
-                
-              ),
-              subtitle: Text(
-                event.animalName,
-                
-              ),
-            trailing: IconButton(
-            icon: const Icon(Icons.delete),
-            onPressed: () async {
-              // Boîte de dialogue de confirmation pour la suppression
-              bool confirmDelete = await showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: const Text("Delete Event?",style: TextStyle(fontFamily: 'Gluten')),
-                    content: const Text("Are you sure you want to delete?",style: TextStyle(fontFamily: 'Gluten')),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.of(context).pop(false),
-                        child: const Text('No',style: TextStyle(fontFamily: 'Gluten'),),
+            (event) => GestureDetector(
+              onTap: () async {
+                final res = await Navigator.push<bool>(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => EditEvent(
+                      firstDate: _firstDay,
+                      lastDate: _lastDay,
+                      event: event,
+                    ),
+                  ),
+                );
+                if (res ?? false) {
+                  _loadFirestoreEvents();
+                }
+              },
+              child: ListTile(
+                title: Text(
+                  event.title,
+                  
+                ),
+                subtitle: Text(
+                  event.animalName,
+                  
+                ),
+              trailing: IconButton(
+              icon: const Icon(Icons.delete),
+              onPressed: () async {
+                // Boîte de dialogue de confirmation pour la suppression
+                bool confirmDelete = await showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: const Text("Delete Event?",style: TextStyle(fontFamily: 'Gluten')),
+                      content: const Text("Are you sure you want to delete?",style: TextStyle(fontFamily: 'Gluten')),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(false),
+                          child: const Text('No',style: TextStyle(fontFamily: 'Gluten'),),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(true),
+                          child: const Text('Yes',style: TextStyle(fontFamily: 'Gluten')),
+                        ),
+                      ],
+                    );
+                  },
+                );
+            
+                if (confirmDelete ?? false) {
+                  
+                  await FirebaseFirestore.instance
+                      .collection('events')
+                      .doc(event.id) 
+                      .delete();
+            
+                  
+                  _loadFirestoreEvents();
+                }
+              },
                       ),
-                      TextButton(
-                        onPressed: () => Navigator.of(context).pop(true),
-                        child: const Text('Yes',style: TextStyle(fontFamily: 'Gluten')),
-                      ),
-                    ],
-                  );
-                },
-              );
-
-              if (confirmDelete ?? false) {
-                
-                await FirebaseFirestore.instance
-                    .collection('events')
-                    .doc(event.id) 
-                    .delete();
-
-                
-                _loadFirestoreEvents();
-              }
-            },
-          ),
-        ),
+                    ),
+            ),
           ).toList(),
         ),
         Column(
@@ -224,7 +234,7 @@ List _getEventsForTheDay(DateTime day) {
         backgroundColor: const Color.fromARGB(255, 237, 154, 9),
         child: const Icon(Icons.add),
       ),
-    );
+    drawer: Sidebar());
   }
   _loadFirestoreEvents() async {
   

@@ -1,138 +1,577 @@
 import 'package:flutter/material.dart';
-import 'add_pet.dart';
-import 'pet_list.dart';
-import 'premium.dart';
-class Tips extends StatefulWidget {
-  const Tips({super.key});
+import 'package:projet/screens/side_bar.dart';
+
+class Astuces extends StatefulWidget {
+  const Astuces({super.key});
+
   @override
-  State<Tips> createState() => _TipsState();
+  State<Astuces> createState() => _AstucesState();
 }
 
-class _TipsState extends State<Tips> {
+class _AstucesState extends State<Astuces> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 237, 154, 9),
-        elevation: 2, 
-        shadowColor: Colors.white, 
-         leading:
-          IconButton(
-            icon: const Icon(Icons.menu), 
-            color:Colors.white,
-            onPressed: () {/* Action à effectuer lors du clic sur l'icône*/},
-            ),
-          title: const Row(
-            children: [
-              
-              Expanded(
-              flex: 6,
-              child: Image(
-                image: AssetImage("assets/logoPetpetni.png"),
-                
-              ),
-),
-
-              SizedBox(width: 10.0,),
-              
-              Expanded (
-                flex:1,
-                child: CircleAvatar(
-                backgroundImage: AssetImage("assets/claudio.png"),
-                
-  
+     appBar: AppBar(
+            backgroundColor: Color.fromARGB(255, 237, 154, 9),
+            elevation: 2,
+            shadowColor: Colors.white,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  child: Image(
+                    image: AssetImage("assets/logoPetpetni.png"),
+                    width: 230,
+                  ),
                 ),
-              ),
-            ],
-          )
-      ),
-       body: Center(
-          child: Container(
-            color:const Color.fromARGB(255, 237, 154, 9),
-            child: SizedBox(
-              width: double.infinity,
-              height: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  const Expanded(
-                    flex: 1,
-                    child: Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 16.0),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                SizedBox(
+                  width: 10.0,
+                ),
+                Container(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/claudio.png"),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+              ],
+            )),
+      body:SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+                padding: const EdgeInsets.fromLTRB(30, 20, 30, 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children:<Widget> [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                      TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      //disabledForegroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        //side: BorderSide(color: Colors.blue), 
+                      ),),
+                      child:const Text(
+                            'Astuces',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20,
+                              fontFamily: "Gluten",
+                            ),
+                          ),
+                      ),
+                      const SizedBox(height:20) ,
+                      TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        disabledForegroundColor: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),),
+                        child:const Text(
+                              'Conversations',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20,
+                                fontFamily: "Gluten",
+                              ),
+                            ),
+                        ),
+                      const SizedBox(height:20) ,
+                      TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      disabledForegroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),),
+                      child:const Text(
+                            'About',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20,
+                              fontFamily: "Gluten",
+                            ),
+                          ),
+                      ),
+                    ],),
+                  const SizedBox(height:10) ,
+                  Container(
+                  margin: const EdgeInsets.fromLTRB(0, 0, 17, 20),
+                  width: 343,
+                  height: 112,
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        left: 10,
+                        top: 25,
+                        child: SizedBox(
+                          width: 325,
+                          height: 85,
+                          child: TextButton(
+                            onPressed: () {Navigator.pushNamed(context, '/Dogs');},
+                            style: TextButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                            ),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24),
+                                border: Border.all(color: const Color(0xfffcb946)),
+                                color: const Color(0xffd9d9d9),
+                                boxShadow: const [
+                                   BoxShadow(
+                                    color: Color(0x3f000000),
+                                    blurRadius:4,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        left: 215,
+                        top: 2,
+                        child: Image.asset(
+                          "assets/dog.png",
+                          //width: 110,
+                          height: 120,
+                        ),
+                      ),
+                      const Positioned(
+                        left: 100,
+                        top: 57,
+                        child: Text(
+                          'Dogs',
+                          style: TextStyle(
+                            fontFamily: 'GlutenBold',
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                            height: 0.8825,
+                            color: Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 17, 20),
+                width: 343,
+                height: 112,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 10,
+                      top: 25,
+                      child: SizedBox(
+                        width: 325,
+                        height: 85,
+                        child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              border: Border.all(color: const Color(0xfffcb946)),
+                              color: const Color(0xffd9d9d9),
+                              boxShadow: const [
+                                  BoxShadow(
+                                  color: Color(0x3f000000),
+                                  blurRadius:4,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 220,
+                      top: 10,
+                      child: Image.asset(
+                        "assets/cat.png",
+                        //width: 110,
+                        height: 100,
+                      ),
+                    ),
+                    const Positioned(
+                      left: 100,
+                      top: 57,
+                      child: Text(
+                        'Cats',
+                        style: TextStyle(
+                          fontFamily: 'GlutenBold',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          height: 0.8825,
+                          color: Color(0xff000000),
+                        ),
+                      ),
+                    ),
+                  ],
+                  ),
+                ),
+                Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 17, 20),
+                width: 343,
+                height: 112,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 10,
+                      top: 25,
+                      child: SizedBox(
+                        width: 325,
+                        height: 85,
+                        child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              border: Border.all(color: const Color(0xfffcb946)),
+                              color: const Color(0xffd9d9d9),
+                              boxShadow: const [
+                                  BoxShadow(
+                                  color: Color(0x3f000000),
+                                  blurRadius:4,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 240,
+                      top: 10,
+                      child: Image.asset(
+                        "assets/rabbit.png",
+                        //width: 110,
+                        height: 100,
+                      ),
+                    ),
+                    const Positioned(
+                      left: 100,
+                      top: 57,
+                      child: Text(
+                        'Rabbits',
+                        style: TextStyle(
+                          fontFamily: 'GlutenBold',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          height: 0.8825,
+                          color: Color(0xff000000),
+                        ),
+                      ),
+                    ),
+                  ],
+                  ),
+                ),
+                Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 17, 20),
+                width: 343,
+                height: 112,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 10,
+                      top: 25,
+                      child: SizedBox(
+                        width: 325,
+                        height: 85,
+                        child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              border: Border.all(color: const Color(0xfffcb946)),
+                              color: const Color(0xffd9d9d9),
+                              boxShadow: const [
+                                  BoxShadow(
+                                  color: Color(0x3f000000),
+                                  blurRadius:4,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 240,
+                      top: 10,
+                      child: Image.asset(
+                        "assets/hamester.png",
+                        //width: 110,
+                        height: 100,
+                      ),
+                    ),
+                    const Positioned(
+                      left: 100,
+                      top: 57,
+                      child: Text(
+                        'Hamesters',
+                        style: TextStyle(
+                          fontFamily: 'GlutenBold',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          height: 0.8825,
+                          color: Color(0xff000000),
+                        ),
+                      ),
+                    ),
+                  ],
+                  ),
+                ),
+                Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 17, 20),
+                width: 343,
+                height: 112,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      left: 10,
+                      top: 25,
+                      child: SizedBox(
+                        width: 325,
+                        height: 85,
+                        child: TextButton(
+                          onPressed: () {},
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(24),
+                              border: Border.all(color: const Color(0xfffcb946)),
+                              color: const Color(0xffd9d9d9),
+                              boxShadow: const [
+                                  BoxShadow(
+                                  color: Color(0x3f000000),
+                                  blurRadius:4,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 165,
+                      top: 10,
+                      child: Image.asset(
+                        "assets/sheep.png",
+                        //width: 110,
+                        height: 100,
+                      ),
+                    ),
+                    const Positioned(
+                      left: 100,
+                      top: 57,
+                      child: Text(
+                        'Sheeps',
+                        style: TextStyle(
+                          fontFamily: 'GlutenBold',
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600,
+                          height: 0.8825,
+                          color: Color(0xff000000),
+                        ),
+                      ),
+                    ),
+                  ],
+                  ),
+                ),
+                    /*TextButton(
+                      onPressed: () {Navigator.pushNamed(context, '/Dogs');},
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.grey[300],
+                        elevation:4,
+                        shadowColor: Colors.grey[300],
+                        shape:const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
+                        ),
+                      ),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          CircleAvatar(
-                            backgroundImage: AssetImage('assets/claudio.png'),
-                            //backgroundColor: Colors.white,
-                            radius: 50, // Ajustez la taille du cercle ici
+                          const Text(
+                            '             Dogs',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              fontFamily: "GlutenBold",
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          SizedBox(width: 10), // Espace entre l'image et le texte
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                                'Claudio Dorevez',
-                                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, fontFamily: "Gluten"),
-                              ),
-                              SizedBox(height: 10,),
-                              Text(
-                                'ClaudioDorevez@gmail.com',
-                                style: TextStyle(fontSize: 16, fontFamily: "Gluten", fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
+                          //const SizedBox(width: 15),
+                          Image.asset(
+                            'assets/dog.png',
+                            height: 120,
+                            ),
                         ],
                       ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 4,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white, // Couleur du cadre
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30.0),
-                          topRight: Radius.circular(30.0),
+                    const SizedBox(height: 20.0),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.grey[300],
+                        elevation:4,
+                        shadowColor: Colors.grey[300],
+                        shape:const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
                         ),
                       ),
-                      child: 
-                        ListView(
-                          children: <Widget>[
-                            const SizedBox(height: 50),
-                            _buildListItem('assets/blackPaw.png', 'Pet list', context, const PetList()),
-                            _buildListItem('assets/addpet.png', 'Add pet', context, const AddPet()),
-                            _buildListItem('assets/Premium.png', 'Upgrade to premium', context, const Premium()),
-                            const SizedBox(height: 190),
-                            _buildListItem('assets/signout.png', 'Sign Out', context, const Premium()),// a modifier
-                          ],
-                        ),
-                      
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          const Text(
+                            '             Cats',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              fontFamily: "GlutenBold",
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          //const SizedBox(width: 15),
+                          Image.asset(
+                            'assets/cat.png',
+                            height: 120,
+                            ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 20.0),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.grey[300],
+                        elevation:4,
+                        shadowColor: Colors.grey[300],
+                        shape:const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
+                        ),
+                      ),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          const Text(
+                            '            Rabbits',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              fontFamily: "GlutenBold",
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          //const SizedBox(width: 15),
+                          Image.asset(
+                            'assets/rabbit.png',
+                            height: 120,
+                            ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20.0),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.grey[300],
+                        elevation:4,
+                        shadowColor: Colors.grey[300],
+                        shape:const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
+                        ),
+                      ),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          const Text(
+                            '          Hamesters',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              fontFamily: "GlutenBold",
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          //const SizedBox(width: 15),
+                          Image.asset(
+                            'assets/hamester.png',
+                            height: 120,
+                            ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20.0),
+                    TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.grey[300],
+                        elevation:4,
+                        shadowColor: Colors.grey[300],
+                        shape:const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
+                        ),
+                      ),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          const Text(
+                            '       Sheep',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 25,
+                              fontFamily: "GlutenBold",
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          //const SizedBox(width: 15),
+                          Image.asset(
+                            'assets/sheep.png',
+                            height: 110,
+                            ),
+                        ],
+                      ),
+                    ),*/
+                  ],
+                ),
               ),
-            ),
-          ),
+          ],
         ),
-
-    );
-  }
- Widget _buildListItem(String imagePath, String name, BuildContext context, Widget destination) {
-    return ListTile(
-      leading:  Image.asset(
-    imagePath,
-    width: 50, 
-    height: 50, 
-  ),
-      title: Text(name ,style: const TextStyle( fontFamily: "Gluten",fontWeight: FontWeight.bold),),
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => destination),
-        );
-      },
-    );
+      ),
+      drawer: Sidebar());
   }
 }

@@ -1,7 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-//import 'screens/tips.dart';
-import 'screens/calendar.dart';
+import 'package:projet/screens/tips.dart';
+import 'screens/calendar/calendar.dart';
+
 
 Future <void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,12 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
-      initialRoute: '/calendar',
-      //initialRoute: '/tips',
-      routes: {
-        //'/tips': (context) => const Tips(),
-        '/calendar': (context) => const EventCalendarScreen(),
+      //initialRoute: '/calendar',
+      initialRoute: '/tips',
+      routes: { 
+      //'/calendar': (context) => const EventCalendarScreen(),
+      '/tips': (context) => const Astuces(),
       },
       
     );
