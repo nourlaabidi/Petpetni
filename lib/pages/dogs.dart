@@ -50,42 +50,251 @@ class _DogsState extends State<Dogs> {
             ],
           ),
       ),
-      body:   Column(
-        children:<Widget> [
-           Container(
-            color: const Color.fromARGB(255, 237, 154, 9),
-              child: const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:<Widget> [
-                    Column(
-                      children: <Widget>[
-                         BackButtonIcon(),
-                         Text(
-                            'your furry friend also needs to be spoiled',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: 10,
-                              fontFamily: "GlutenB"
-                            ),),
-                          Text(
-                            'Discover expert tips and tricks to keep your furry friend happy and healthy',
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: 10,
-                              fontFamily: "Gluten"
-                              ),)
+      body: SingleChildScrollView(
+        child: Column(
+            children:<Widget> [
+               Container(
+                color: const Color.fromARGB(255, 237, 154, 9),
+                  child: Padding(
+                    // alignment: Alignment.centerLeft, // Adjust alignment as needed
+                    padding: const EdgeInsets.fromLTRB(25, 10,0,0),
+                    child: Row(
+                      children:<Widget> [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                             GestureDetector(
+                              onTap: (){Navigator.pushNamed(context, '/Astuces');},
+                              child: const BackButtonIcon()),
+                             const SizedBox(height:40,),
+                             const SizedBox(
+                              width: 180,
+                               child: Text(
+                                  'your furry friend also needs to be spoiled',
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 16,
+                                    fontFamily: "GlutenB1"
+                                  ),),
+                             ),
+                             const SizedBox(height: 10,),
+                              const SizedBox(
+                                width: 180,
+                                child: Text(
+                                  'Discover expert tips and tricks to keep your furry friend happy and healthy',
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    fontFamily: "Gluten"
+                                    ),),
+                              ),
+                              const SizedBox(height:100,)
+                          ],
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.only(top:70.0, left: 52.0), // Adjust padding as needed
+                          child: Image(
+                            image: AssetImage('assets/dog1.png'),
+                            height: 190,
+                            width: 150,
+                          ),
+                        )
                       ],
                     ),
-                    Image(image: AssetImage('asset/dog.png',) ,height: 20,width: 20,)
-                  ],
+                  ),
                 ),
-              ),
-            ),
-        ],
+                Padding(
+                  padding:  const EdgeInsets.fromLTRB(15, 45, 15, 45),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children:<Widget> [
+                          Column(
+                          children: <Widget>[
+                              GestureDetector(
+                                onTap: (){Navigator.pushNamed(context, '/Astuces');},
+                                child: Column(children:<Widget> [
+                                  Container(
+                                    width: 100,
+                                    height: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(24),
+                                      color: Colors.grey[300],
+                                    ),
+                                      child:const Image(
+                                        image: AssetImage('assets/health.png'),
+                                        width: 10,
+                                        height: 10,
+                                        fit: BoxFit.contain 
+                                      ),
+                                  ),
+                                  const SizedBox(height: 5,),
+                                  Text(
+                                    'health',
+                                    style: TextStyle(
+                                        color: Colors.orange[900],
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 16,
+                                        fontFamily: "GlutenB"
+                                      ),
+                                    )],),
+                              ),
+                                    const SizedBox(height: 10,),
+                                   GestureDetector(
+                                    onTap: (){Navigator.pushNamed(context, '/Astuces');},
+                                     child: Column(children:<Widget> [
+                                       Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(24),
+                                        color: Colors.grey[300],
+                                      ),
+                                        child:const Image(
+                                          image: AssetImage('assets/health.png'),
+                                          width: 10,
+                                          height: 10,
+                                          fit: BoxFit.contain 
+                                        ),
+                                      ),
+                                      const SizedBox(height: 4,),
+                                      Text(
+                                      'health',
+                                      style: TextStyle(
+                                          color: Colors.orange[900],
+                                          fontWeight: FontWeight.w900,
+                                          fontSize: 16,
+                                          fontFamily: "GlutenB"
+                                        ),
+                                      )],),
+                                   ),
+                                    const SizedBox(height: 10,),
+                                    GestureDetector(
+                                      onTap: (){Navigator.pushNamed(context, '/Astuces');},
+                                      child: Column(children:<Widget> [
+                                      Container(
+                                        width: 100,
+                                        height: 100,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(24),
+                                          color: Colors.grey[300],
+                                        ),
+                                          child:const Image(
+                                            image: AssetImage('assets/health.png'),
+                                            width: 10,
+                                            height: 10,
+                                            fit: BoxFit.contain 
+                                          ),
+                                      ),
+                                      const SizedBox(height: 4,),
+                                      Text(
+                                        'health',
+                                        style: TextStyle(
+                                            color: Colors.orange[900],
+                                            fontWeight: FontWeight.w900,
+                                            fontSize: 16,
+                                            fontFamily: "GlutenB"
+                                          ),
+                                        )],),
+                                    ),
+                          ],
+                        ),
+                      Column(
+                        children: <Widget>[
+                            GestureDetector(
+                              onTap: (){Navigator.pushNamed(context, '/Astuces');},
+                              child: Column(children:<Widget> [
+                                Container(
+                                  width: 100,
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24),
+                                    color: Colors.grey[300],
+                                  ),
+                                    child:const Image(
+                                      image: AssetImage('assets/health.png'),
+                                      width: 10,
+                                      height: 10,
+                                      fit: BoxFit.contain 
+                                    ),
+                                ),
+                                const SizedBox(height: 4,),
+                                Text(
+                                  'health',
+                                  style: TextStyle(
+                                      color: Colors.orange[900],
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16,
+                                      fontFamily: "GlutenB"
+                                    ),
+                                  )],),
+                            ),
+                                const SizedBox(height: 10,),
+                                 GestureDetector(
+                                  onTap: (){Navigator.pushNamed(context, '/Astuces');},
+                                   child: Column(children:<Widget> [
+                                                               Container(
+                                                                 width: 100,
+                                                                 height: 100,
+                                                                 decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24),
+                                    color: Colors.grey[300],
+                                                                 ),
+                                    child:const Image(
+                                      image: AssetImage('assets/health.png'),
+                                      width: 10,
+                                      height: 10,
+                                      fit: BoxFit.contain 
+                                    ),
+                                                               ),
+                                                               const SizedBox(height: 4,),
+                                                               Text(
+                                                                 'health',
+                                                                 style: TextStyle(
+                                      color: Colors.orange[900],
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16,
+                                      fontFamily: "GlutenB"
+                                    ),
+                                                                 )],),
+                                 ),
+                                const SizedBox(height: 10,),
+                                 GestureDetector(
+                                  onTap: (){Navigator.pushNamed(context, '/Astuces');},
+                                   child: Column(children:<Widget> [
+                                                               Container(
+                                                                 width: 100,
+                                                                 height: 100,
+                                                                 decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(24),
+                                    color: Colors.grey[300],
+                                                                 ),
+                                    child:const Image(
+                                      image: AssetImage('assets/health.png'),
+                                      width: 10,
+                                      height: 10,
+                                      fit: BoxFit.contain 
+                                    ),
+                                                               ),
+                                                               const SizedBox(height: 4,),
+                                                               Text(
+                                                                 'health',
+                                                                 style: TextStyle(
+                                      color: Colors.orange[900],
+                                      fontWeight: FontWeight.w900,
+                                      fontSize: 16,
+                                      fontFamily: "GlutenB"
+                                    ),
+                                                                 )],),
+                                 ),
+                        ],
+                      )
+                    ],
+                  ),
+                )
+            ],
+        ),
       ),
     );
   }

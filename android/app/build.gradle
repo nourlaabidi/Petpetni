@@ -1,3 +1,4 @@
+
 plugins {
     id "com.android.application"
     id "kotlin-android"
@@ -21,6 +22,7 @@ def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
+apply plugin: 'com.google.gms.google-services'
 
 android {
     namespace "com.example.astuces"
@@ -49,6 +51,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -64,4 +67,9 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+
+dependencies {
+    implementation'com.android.support:multidex:2.0.1'
+
+}
+
