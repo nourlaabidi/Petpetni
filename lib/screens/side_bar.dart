@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet/screens/search.dart';
+import 'package:projet/screens/map.dart';
 import 'package:projet/screens/profile.dart';
 
 class Sidebar extends StatelessWidget {
@@ -43,22 +43,7 @@ class Sidebar extends StatelessWidget {
               );
             },
           ),
-          ListTile(
-            leading: Icon(Icons.search, color: Colors.white, size: 30),
-            title: Text('Search',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2.0,
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    fontFamily: 'GlutenBold')),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Search()), 
-              );
-            },
-          ),
+          
           ListTile(
             leading: Icon(Icons.location_on, color: Colors.white, size: 30),
             title: Text('Locate Vets',
@@ -68,7 +53,12 @@ class Sidebar extends StatelessWidget {
                     letterSpacing: 2.0,
                     color: const Color.fromARGB(255, 255, 255, 255),
                     fontFamily: 'GlutenBold')),
-            onTap: () => null,
+            onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => CurrentLocationScreen()),
+                            );
+                          },
           ),
           ListTile(
             leading: Icon(Icons.logout, color: Colors.white, size: 30),

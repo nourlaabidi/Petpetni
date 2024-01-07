@@ -6,12 +6,14 @@ class Event {
   final DateTime date;
   final String id;
   final String? animalName;
+  final String? userEmail;
   Event({
     required this.title,
     this.description,
     required this.date,
     required this.id,
     this.animalName,
+    this.userEmail,
   });
 
   factory Event.fromFirestore(DocumentSnapshot<Map<String, dynamic>> snapshot,
@@ -22,6 +24,7 @@ class Event {
       title: data['title'],
       description: data['description'],
       animalName: data['animalName'],
+      userEmail: data['userEmail'],
       id: snapshot.id,
     );
   }
@@ -31,7 +34,8 @@ class Event {
       "date": Timestamp.fromDate(date),
       "title": title,
       "description": description,
-      "animalName": animalName
+      "animalName": animalName,
+      "userEmail": userEmail
     };
   }
 }

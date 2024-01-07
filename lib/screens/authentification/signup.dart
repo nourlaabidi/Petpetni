@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:projet/screens/HomePage.dart';
 import 'package:projet/screens/authentification/login.dart';
+import '../../global.dart';
+
 
 
 String accounttype = '';
@@ -201,10 +203,9 @@ class _LoginDemoState extends State<LoginDemo> {
                               'email': email,
                               'password': password,
                             });
-
+                            Email.name=username;
                             print("Registered: ${userCredential.user!.uid}");
                             print("Username: $username");
-
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (_) => YouareScreen()),
@@ -334,7 +335,7 @@ class YouareCol extends StatelessWidget {
                           });
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (_) => HomePage()),
+                            MaterialPageRoute(builder: (_) => SingInScreen()),
                           );
                         },
                       ),

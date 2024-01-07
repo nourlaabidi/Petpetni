@@ -43,6 +43,9 @@ dependencies:
   google_place: ^0.4.7
   http: ^0.13.6
   firebase_auth: ^4.15.3
+  image_picker: ^1.0.6
+  firebase_storage: ^11.6.0
+  uuid: ^4.2.2
   
 
 dev_dependencies:

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:projet/global.dart';
+import 'package:projet/screens/authentification/login.dart';
 import 'package:projet/screens/side_bar.dart';
 import 'pet/add_pet.dart';
 import 'pet/pet_list.dart';
@@ -10,6 +12,8 @@ class Tips extends StatefulWidget {
 }
 
 class _TipsState extends State<Tips> {
+  String email=Email.email;
+  String name=Email.name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +51,7 @@ class _TipsState extends State<Tips> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  const Expanded(
+                  Expanded(
                     flex: 1,
                     child: Padding(
                       padding:  EdgeInsets.symmetric(horizontal: 16.0),
@@ -65,12 +69,12 @@ class _TipsState extends State<Tips> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
-                                'Claudio Dorevez',
+                                name,
                                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, fontFamily: "Gluten"),
                               ),
                               SizedBox(height: 10,),
                               Text(
-                                'ClaudioDorevez@gmail.com',
+                                email,
                                 style: TextStyle(fontSize: 16, fontFamily: "Gluten", fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -95,9 +99,9 @@ class _TipsState extends State<Tips> {
                             const SizedBox(height: 50),
                             _buildListItem('assets/blackPaw.png', 'Pet list', context,  PetList()),
                             _buildListItem('assets/addpet.png', 'Add pet', context, const AddPet()),
-                            _buildListItem('assets/Premium.png', 'Upgrade to premium', context, const Premium()),
-                            const SizedBox(height: 190),
-                            _buildListItem('assets/signout.png', 'Sign Out', context, const Premium()),// a modifier
+                            _buildListItem('assets/Premium.png', 'Upgrade to premium', context,  Premium()),
+                            const SizedBox(height: 250),
+                            _buildListItem('assets/signout.png', 'Sign Out', context,  SingInScreen()),// a modifier
                           ],
                         ),
                       

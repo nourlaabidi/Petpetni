@@ -5,7 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:projet/screens/HomePage.dart';
 import 'package:projet/screens/authentification/forgetpassword.dart';
 import 'signup.dart';
-
+import '../tips.dart';
+import '../../global.dart';
 
 class SingInScreen extends StatelessWidget {
   @override
@@ -78,7 +79,7 @@ class _MyColumnState extends State<MyColumn> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.fromLTRB(15, 5, 0, 10),
                         child: Text(
                           'Email',
@@ -97,14 +98,14 @@ class _MyColumnState extends State<MyColumn> {
                           onChanged: (value) {
                             email = value;
                           },
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             border: OutlineInputBorder(),
                             labelText: 'Email',
                             hintText: 'Enter valid email id as abc@gmail.com',
                           ),
                         ),
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.fromLTRB(15, 5, 0, 10),
                         child: Text(
                           'Password',
@@ -172,10 +173,11 @@ class _MyColumnState extends State<MyColumn> {
                           );
                           print("Signed in: ${userCredential.user!.uid}");
                           String? accountType = await getAccounttype(email);
+                          Email.email=email;
                           if (accountType == 'Pet lover') {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (_) => HomePage()),
+                              MaterialPageRoute(builder: (_) => Astuces()),
                             );
                           } else {
                             Navigator.push(

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:projet/discussions.dart';
+import 'package:projet/screens/about.dart';
+import 'package:projet/screens/dogs.dart';
 import 'package:projet/screens/side_bar.dart';
+
 
 class Astuces extends StatefulWidget {
   const Astuces({super.key});
-
   @override
   State<Astuces> createState() => _AstucesState();
 }
@@ -12,7 +15,7 @@ class _AstucesState extends State<Astuces> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
+      appBar: AppBar(
             backgroundColor: Color.fromARGB(255, 237, 154, 9),
             elevation: 2,
             shadowColor: Colors.white,
@@ -52,14 +55,12 @@ class _AstucesState extends State<Astuces> {
                       onPressed: () {},
                       style: TextButton.styleFrom(
                       backgroundColor: Colors.white,
-                     
+                      //disabledForegroundColor: Colors.black,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
-                         
+                        //side: BorderSide(color: Colors.blue), 
                       ),),
-                      child:
-                      
-                      const Text(
+                      child:const Text(
                             'Astuces',
                             style: TextStyle(
                               color: Colors.black,
@@ -69,9 +70,12 @@ class _AstucesState extends State<Astuces> {
                             ),
                           ),
                       ),
-                      //const SizedBox(height:20) ,
+                      const SizedBox(height:20) ,
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => Discussions()),
+                            );},
                         style: TextButton.styleFrom(
                         backgroundColor: Colors.white,
                         disabledForegroundColor: Colors.black,
@@ -90,7 +94,10 @@ class _AstucesState extends State<Astuces> {
                         ),
                       const SizedBox(height:20) ,
                       TextButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => About()),
+                            );},
                       style: TextButton.styleFrom(
                       backgroundColor: Colors.white,
                       disabledForegroundColor: Colors.black,
@@ -122,7 +129,10 @@ class _AstucesState extends State<Astuces> {
                           width: 325,
                           height: 85,
                           child: TextButton(
-                            onPressed: () {Navigator.pushNamed(context, '/Dogs');},
+                            onPressed: () {Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (_) => Dogs()),
+                            );},
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,
                             ),
@@ -157,7 +167,7 @@ class _AstucesState extends State<Astuces> {
                         child: Text(
                           'Dogs',
                           style: TextStyle(
-                            fontFamily: 'GlutenBold',
+                            fontFamily: 'GlutenB',
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                             height: 0.8825,
@@ -216,7 +226,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Cats',
                         style: TextStyle(
-                          fontFamily: 'GlutenBold',
+                          fontFamily: 'GlutenB',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,
@@ -275,7 +285,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Rabbits',
                         style: TextStyle(
-                          fontFamily: 'GlutenBold',
+                          fontFamily: 'GlutenB',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,
@@ -334,7 +344,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Hamesters',
                         style: TextStyle(
-                          fontFamily: 'GlutenBold',
+                          fontFamily: 'GlutenB',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,
@@ -393,7 +403,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Sheeps',
                         style: TextStyle(
-                          fontFamily: 'GlutenBold',
+                          fontFamily: 'GlutenB',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,
@@ -404,12 +414,13 @@ class _AstucesState extends State<Astuces> {
                   ],
                   ),
                 ),
+          
                   ],
                 ),
               ),
           ],
         ),
       ),
-      drawer: Sidebar());
+       drawer: Sidebar());
   }
 }
