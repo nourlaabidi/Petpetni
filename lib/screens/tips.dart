@@ -52,22 +52,24 @@ class _AstucesState extends State<Astuces> {
                       onPressed: () {},
                       style: TextButton.styleFrom(
                       backgroundColor: Colors.white,
-                      //disabledForegroundColor: Colors.black,
+                     
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
-                        //side: BorderSide(color: Colors.blue), 
+                         
                       ),),
-                      child:const Text(
+                      child:
+                      
+                      const Text(
                             'Astuces',
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 20,
+                              fontSize: 17,
                               fontFamily: "Gluten",
                             ),
                           ),
                       ),
-                      const SizedBox(height:20) ,
+                      //const SizedBox(height:20) ,
                       TextButton(
                         onPressed: () {},
                         style: TextButton.styleFrom(
@@ -81,7 +83,7 @@ class _AstucesState extends State<Astuces> {
                               style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w700,
-                                fontSize: 20,
+                                fontSize: 17,
                                 fontFamily: "Gluten",
                               ),
                             ),
@@ -100,7 +102,7 @@ class _AstucesState extends State<Astuces> {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 20,
+                              fontSize: 17,
                               fontFamily: "Gluten",
                             ),
                           ),
@@ -402,170 +404,6 @@ class _AstucesState extends State<Astuces> {
                   ],
                   ),
                 ),
-                    /*TextButton(
-                      onPressed: () {Navigator.pushNamed(context, '/Dogs');},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.grey[300],
-                        elevation:4,
-                        shadowColor: Colors.grey[300],
-                        shape:const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
-                        ),
-                      ),
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          const Text(
-                            '             Dogs',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 25,
-                              fontFamily: "GlutenBold",
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          //const SizedBox(width: 15),
-                          Image.asset(
-                            'assets/dog.png',
-                            height: 120,
-                            ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20.0),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.grey[300],
-                        elevation:4,
-                        shadowColor: Colors.grey[300],
-                        shape:const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
-                        ),
-                      ),
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          const Text(
-                            '             Cats',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 25,
-                              fontFamily: "GlutenBold",
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          //const SizedBox(width: 15),
-                          Image.asset(
-                            'assets/cat.png',
-                            height: 120,
-                            ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20.0),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.grey[300],
-                        elevation:4,
-                        shadowColor: Colors.grey[300],
-                        shape:const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
-                        ),
-                      ),
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          const Text(
-                            '            Rabbits',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 25,
-                              fontFamily: "GlutenBold",
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          //const SizedBox(width: 15),
-                          Image.asset(
-                            'assets/rabbit.png',
-                            height: 120,
-                            ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20.0),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.grey[300],
-                        elevation:4,
-                        shadowColor: Colors.grey[300],
-                        shape:const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
-                        ),
-                      ),
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          const Text(
-                            '          Hamesters',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 25,
-                              fontFamily: "GlutenBold",
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          //const SizedBox(width: 15),
-                          Image.asset(
-                            'assets/hamester.png',
-                            height: 120,
-                            ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 20.0),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.grey[300],
-                        elevation:4,
-                        shadowColor: Colors.grey[300],
-                        shape:const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          side: BorderSide(color: Color.fromARGB(255, 237, 154, 9))
-                        ),
-                      ),
-                      child:  Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          const Text(
-                            '       Sheep',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 25,
-                              fontFamily: "GlutenBold",
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          //const SizedBox(width: 15),
-                          Image.asset(
-                            'assets/sheep.png',
-                            height: 110,
-                            ),
-                        ],
-                      ),
-                    ),*/
                   ],
                 ),
               ),

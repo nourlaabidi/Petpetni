@@ -122,7 +122,7 @@ class _AddEventState extends State<AddEvent> {
     final animalName = _animalNameController.text;
   if (title.isEmpty) {
     print('title cannot be empty');
-		// you can use snackbar to display erro to the user
+		
     return;
   }
   await FirebaseFirestore.instance.collection('events').add({

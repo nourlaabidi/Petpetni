@@ -76,7 +76,7 @@ List _getEventsForTheDay(DateTime day) {
         children: [
           TableCalendar(
             firstDay: DateTime(2022, 1, 1),
-            lastDay: DateTime(2023, 12, 31),
+            lastDay: DateTime(2024, 12, 31),
             focusedDay: _focusedDay,
             calendarFormat: _calendarFormat,
             onDaySelected: (selectedDay, focusedDay) {
@@ -116,7 +116,7 @@ List _getEventsForTheDay(DateTime day) {
           
         ),
       ),
-  
+       ////////////
         onFormatChanged: (format) {
               if (_calendarFormat != format) {
                 // Call `setState()` when updating calendar format
@@ -201,6 +201,7 @@ List _getEventsForTheDay(DateTime day) {
             ),
           ).toList(),
         ),
+        ////////////////////
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.end,

@@ -93,7 +93,7 @@ class _TipsState extends State<Tips> {
                         ListView(
                           children: <Widget>[
                             const SizedBox(height: 50),
-                            _buildListItem('assets/blackPaw.png', 'Pet list', context, const PetList()),
+                            _buildListItem('assets/blackPaw.png', 'Pet list', context,  PetList()),
                             _buildListItem('assets/addpet.png', 'Add pet', context, const AddPet()),
                             _buildListItem('assets/Premium.png', 'Upgrade to premium', context, const Premium()),
                             const SizedBox(height: 190),
