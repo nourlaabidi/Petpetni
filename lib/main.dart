@@ -1,8 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:projet/screens/authentification/signup.dart';
 import 'package:projet/screens/map.dart';
 import 'package:projet/screens/pet/add_pet.dart';
 import 'package:projet/screens/tips.dart';
+import 'package:projet/screens/welcom.dart';
 import 'screens/calendar/calendar.dart';
 import 'package:projet/screens/pet/pet_list.dart';
 
@@ -18,17 +20,21 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      //initialRoute: '/calendar',
+      initialRoute: '/calendar',
       //initialRoute: '/map',
       //initialRoute: '/tips',
       //initialRoute: '/add_pet',
-      initialRoute: '/pet_list',
+      //initialRoute: '/pet_list',
+      //initialRoute: '/welcom',
+      //initialRoute: '/signup',
 
       routes: { 
-      //'/calendar': (context) => const EventCalendarScreen(),
+      '/calendar': (context) => const EventCalendarScreen(),
       //'/tips': (context) => const Astuces(),
       //'/add_pet': (context) => const AddPet(),
-      '/pet_list': (context) =>  PetList(),
+      //'/pet_list': (context) =>  PetList(),
+      //'/welcom': (context) =>  Welcome(),
+      //'/signup': (context) =>  SingUpScreen(),
       //'/map': (context) => const CurrentLocationScreen(),
       },
       
