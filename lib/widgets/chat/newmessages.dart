@@ -11,6 +11,7 @@ class NewMessages extends StatefulWidget {
   const NewMessages({Key? key}) : super(key: key);  
   @override
   State<NewMessages> createState() => _NewMessageState();
+  String get getImageUrl => '';
 }
 
 class _NewMessageState extends State<NewMessages> {
@@ -26,12 +27,12 @@ class _NewMessageState extends State<NewMessages> {
     });
     _controller.clear();
   }
+  String imageName='';
 
   final ImagePicker _picker = ImagePicker();
   XFile? _imageFile; // Variable to store the picked image file
 
-  Future<String> _pickImageAndUpload_Gallery() async {
-    String imageUrl='';
+  Future<void> _pickImageAndUpload_Gallery() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
     setState(() {
       _imageFile = image;
@@ -49,12 +50,11 @@ class _NewMessageState extends State<NewMessages> {
       imageUrl = await downloadURL.ref.getDownloadURL();
 
       // Save the image URL in Firestore
-      await FirebaseFirestore.instance.collection('images').add({
+      await FirebaseFirestore.instance.collection('chat').add({
         'imageUrl': imageUrl,
         'ImagecreatedAt': FieldValue.serverTimestamp(),
       });
     }
-    return imageUrl;
   }
   Future<void> _pickImageAndUpload_Camera() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.camera);
@@ -72,15 +72,35 @@ class _NewMessageState extends State<NewMessages> {
       // Get the download URL of the uploaded image
       TaskSnapshot downloadURL = await uploadTask;
       String imageUrl = await downloadURL.ref.getDownloadURL();
-
       // Save the image URL in Firestore
-      await FirebaseFirestore.instance.collection('images').add({
+      await FirebaseFirestore.instance.collection('chat').add({
         'imageUrl': imageUrl,
         'ImagecreatedAt': FieldValue.serverTimestamp(),
       });
     }
   }
+  late String imageUrl;
+  final storage = FirebaseStorage.instance;
+  @override
+  void initState() {
+    super.initState();
+    // Set the initial value of imageUrl to an empty string
+    imageUrl = '';
+    //Retrieve the imge grom Firebase Storage
+    getImageUrl();
+  }
 
+  Future<void> getImageUrl() async {
+    // Get the reference to the image file in Firebase Storage
+    final ref = storage.ref().child('images').child(imageName);
+    // Get teh imageUrl to download URL
+    final url = await ref.getDownloadURL();
+    setState(() {
+      imageUrl = url;
+    });
+    imageUrl;
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Container(
