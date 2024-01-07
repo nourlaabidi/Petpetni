@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'profile.dart';
 
-class Sidebar extends StatelessWidget {
+class Sidebar extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Color.fromARGB(255, 237, 154, 9),
+      backgroundColor: const Color.fromARGB(255, 237, 154, 9),
       child: ListView(
         children: [
           Container(
-            margin: EdgeInsets.fromLTRB(10, 30, 20, 0),
-            child: Text('Menu',
+            margin: const EdgeInsets.fromLTRB(10, 30, 20, 0),
+            child: const Text('Menu',
                 style: TextStyle(
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
@@ -18,7 +20,7 @@ class Sidebar extends StatelessWidget {
                   fontFamily: 'GlutenBold',
                 )),
           ),
-          Divider(
+          const Divider(
             height: 30.0,
             color: Colors.white,
             thickness: 6,
@@ -33,19 +35,14 @@ class Sidebar extends StatelessWidget {
                     letterSpacing: 2.0,
                     color: const Color.fromARGB(255, 255, 255, 255),
                     fontFamily: 'GlutenBold')),
-            onTap: () => null,
+            onTap: () {
+             Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Profile()),
+              );
+            },
           ),
-          ListTile(
-            leading: Icon(Icons.search, color: Colors.white, size: 30),
-            title: Text('Search',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2.0,
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    fontFamily: 'GlutenBold')),
-            onTap: () => null,
-          ),
+          
           ListTile(
             leading: Icon(Icons.location_on, color: Colors.white, size: 30),
             title: Text('Locate Vets',
@@ -69,14 +66,12 @@ class Sidebar extends StatelessWidget {
             onTap: () => null,
           ),
           Container(
-            margin: EdgeInsets.fromLTRB(0,10,140,0),
-            child: Image(            
-            image: AssetImage('Assets/dogside.png'),
-            
-            width: 50,
-            height:320,
-          )
-          )
+              margin: EdgeInsets.fromLTRB(0, 10, 140, 0),
+              child: Image(
+                image: AssetImage('assets/dogside.png'),
+                width: 50,
+                height: 320,
+              ))
         ],
       ),
     );
