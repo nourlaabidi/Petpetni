@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class Dogs extends StatefulWidget {
   const Dogs({super.key});
-
   @override
   State<Dogs> createState() => _DogsState();
 }

@@ -1,8 +1,6 @@
 import 'package:astuces/widgets/chat/newmessages.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:astuces/widgets/chat/messages.dart';
-import 'package:astuces/widgets/chat/newmessages.dart';
 
 
 class Chats extends StatefulWidget {
@@ -22,9 +20,9 @@ class _ChatsState extends State<Chats> {
         shadowColor: Colors.white, 
          leading:
           IconButton(
-            icon: const Icon(Icons.menu), 
+            icon: const Icon(Icons.arrow_back), 
             color:Colors.white,
-            onPressed: () {/* Action à effectuer lors du clic sur l'icône*/},
+            onPressed: () {},
             ),
           title: const Row(
             children: [
@@ -59,14 +57,6 @@ class _ChatsState extends State<Chats> {
               Expanded(child:Messages(),),
               NewMessages(),
             ]),),
-          /*floatingActionButton: FloatingActionButton(
-            child:Icon(Icons.add),
-            onPressed: () {
-                FirebaseFirestore.instance
-                    .collection('/chat')
-                    .add({"text": "what is the problem"});
-            },
-          ),*/
     );
   }
 }
