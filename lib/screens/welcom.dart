@@ -80,7 +80,7 @@ class _WelcomeState extends State<Welcome> {
                 },
                 child: const Text(
                   'Lets get started',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+                  style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: "Gluten",fontWeight: FontWeight.bold),
                 ),
               ),
             ),

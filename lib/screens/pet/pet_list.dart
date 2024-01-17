@@ -19,13 +19,10 @@ class _PetListState extends State<PetList> {
           elevation: 2,
           shadowColor: Colors.white,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Astuces()),
-              );
-            },
+            icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); 
+          },
           ),
           title: Row(
             children: [
@@ -61,15 +58,15 @@ class _PetListState extends State<PetList> {
                           color: Colors.black,
                         ),
                         onPressed: () {
-                          // Ajoutez ici l'action que vous souhaitez effectuer lors de l'appui sur l'icône
+                         
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => EventCalendarScreen()), // Remplacez CalendarPage() par la page à laquelle vous souhaitez rediriger
+                            MaterialPageRoute(builder: (context) => EventCalendarScreen()), 
                           );
                         },
                       ),
 
-      SizedBox(width: 10), // Espace entre l'icône et le texte
+      SizedBox(width: 10), 
       Expanded(
         flex: 6,
         child: Text(
@@ -125,7 +122,7 @@ class _PetListState extends State<PetList> {
                     itemBuilder: (context, index) {
                       final pet = pets[index].data() as Map<String, dynamic>;
 
-                      return buildPetCard(pet); // Fonction pour construire la carte du pet
+                      return buildPetCard(pet); 
                     },
                   );
                 },
@@ -203,7 +200,7 @@ class _PetListState extends State<PetList> {
                     top: 46,
                     child: IconButton(
                     onPressed: () {
-                      // Ajoutez ici la logique pour supprimer la carte de l'interface et de Firestore
+                      
                     },
                     icon: Icon(
                       Icons.delete,
@@ -211,11 +208,7 @@ class _PetListState extends State<PetList> {
                       size: 30,
                     ),
                   ),
-                    /*child: Image.asset(
-                      "assets/calendar.png",
-                      width: 44,
-                      height: 39,
-                    ),*/
+                    
                   ),
                   Positioned(
                     left: 158,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet/screens/authentification/login.dart';
 import 'package:projet/screens/map.dart';
 import 'package:projet/screens/profile.dart';
 
@@ -69,7 +70,13 @@ class Sidebar extends StatelessWidget {
                     letterSpacing: 2.0,
                     color: const Color.fromARGB(255, 255, 255, 255),
                     fontFamily: 'GlutenBold')),
-            onTap: () => null,
+            onTap: () {
+              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => SingInScreen()),
+                              );
+            },
           ),
           Container(
             margin: EdgeInsets.fromLTRB(0,10,140,0),

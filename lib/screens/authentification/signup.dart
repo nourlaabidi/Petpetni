@@ -59,7 +59,7 @@ class _LoginDemoState extends State<LoginDemo> {
                     child: Text(
                       'Create your account',
                       style: TextStyle(
-                        fontFamily: 'Gluten',
+                        fontFamily: 'GlutenBold',
                         fontSize: 26,
                         fontWeight: FontWeight.w400,
                         height: 0.8825,
@@ -75,7 +75,7 @@ class _LoginDemoState extends State<LoginDemo> {
                         child: Text(
                           'Username',
                           style: TextStyle(
-                            fontFamily: 'Gluten',
+                            fontFamily: 'GlutenBold',
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                             height: 0.8825,
@@ -99,7 +99,7 @@ class _LoginDemoState extends State<LoginDemo> {
                         child: Text(
                           'Email',
                           style: TextStyle(
-                            fontFamily: 'Gluten',
+                            fontFamily: 'GlutenBold',
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                             height: 0.8825,
@@ -123,7 +123,7 @@ class _LoginDemoState extends State<LoginDemo> {
                         child: Text(
                           'Password',
                           style: TextStyle(
-                            fontFamily: 'Gluten',
+                            fontFamily: 'GlutenBold',
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                             height: 0.8825,
@@ -149,7 +149,7 @@ class _LoginDemoState extends State<LoginDemo> {
                         child: Text(
                           'Confirm password',
                           style: TextStyle(
-                            fontFamily: 'Gluten',
+                            fontFamily: 'GlutenBold',
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                             height: 0.8825,
@@ -190,11 +190,11 @@ class _LoginDemoState extends State<LoginDemo> {
                               password: password,
                             );
 
-                            // Set the display name (username) for the user
+                           
                             await userCredential.user!
                                 .updateDisplayName(username);
 
-                            // Store additional user data in Cloud Firestore
+                            
                             await FirebaseFirestore.instance
                                 .collection('users')
                                 .doc(userCredential.user!.uid)
@@ -219,7 +219,7 @@ class _LoginDemoState extends State<LoginDemo> {
                       },
                       child: const Text(
                         'Sign Up',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: 'GlutenBold'),
                       ),
                     ),
                   ),
@@ -304,7 +304,7 @@ class YouareCol extends StatelessWidget {
                       child: Text(
                         'You are ?',
                         style: TextStyle(
-                          fontFamily: 'Gluten',
+                          fontFamily: 'GlutenBold',
                           fontSize: 26,
                           fontWeight: FontWeight.w400,
                           height: 0.8825,

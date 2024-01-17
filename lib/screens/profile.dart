@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projet/global.dart';
 import 'package:projet/screens/authentification/login.dart';
+import 'package:projet/screens/payme.dart';
 import 'package:projet/screens/side_bar.dart';
 import 'pet/add_pet.dart';
 import 'pet/pet_list.dart';
@@ -21,6 +22,12 @@ class _TipsState extends State<Tips> {
             backgroundColor: Color.fromARGB(255, 237, 154, 9),
             elevation: 2,
             shadowColor: Colors.white,
+            leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); 
+          },
+          ),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -72,6 +79,7 @@ class _TipsState extends State<Tips> {
                                 name,
                                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w900, fontFamily: "Gluten"),
                               ),
+                            
                               SizedBox(height: 10,),
                               Text(
                                 email,
@@ -99,8 +107,8 @@ class _TipsState extends State<Tips> {
                             const SizedBox(height: 50),
                             _buildListItem('assets/blackPaw.png', 'Pet list', context,  PetList()),
                             _buildListItem('assets/addpet.png', 'Add pet', context, const AddPet()),
-                            _buildListItem('assets/Premium.png', 'Upgrade to premium', context,  Premium()),
-                            const SizedBox(height: 250),
+                            _buildListItem('assets/Premium.png', 'Upgrade to premium', context,  Payme()),
+                            const SizedBox(height: 290),
                             _buildListItem('assets/signout.png', 'Sign Out', context,  SingInScreen()),// a modifier
                           ],
                         ),
@@ -113,7 +121,7 @@ class _TipsState extends State<Tips> {
           ),
         ),
 
-    drawer: Sidebar());
+    );
   }
  Widget _buildListItem(String imagePath, String name, BuildContext context, Widget destination) {
     return ListTile(

@@ -25,7 +25,7 @@ class ForgetPasswordScreen extends StatelessWidget {
           title: Text(
             "Forget Password",
             style: TextStyle(
-              fontFamily: 'Gluten',
+              fontFamily: 'GlutenBold',
               fontSize: 20,
               fontWeight: FontWeight.w400,
               height: 0.8825,
@@ -61,15 +61,15 @@ class _MyColumnState extends State<MyColumn> {
         MaterialPageRoute(builder: (context) => VerifScreen()),
       );
 
-      // Now, you can navigate to the next interface or perform other actions
+    
     } catch (e) {
-      // Handle errors, such as invalid email, user not found, etc.
+      
       print("Error sending verification code: $e");
     }
   }
 
   String _generateVerificationCode() {
-    // Generate a random 6-digit code
+    
     return (100000 + (DateTime.now().millisecondsSinceEpoch % 900000))
         .toString();
   }
@@ -143,7 +143,7 @@ class _MyColumnState extends State<MyColumn> {
                   child: Text(
                     'Email',
                     style: TextStyle(
-                      fontFamily: 'Gluten',
+                      fontFamily: 'GlutenBold',
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
                       height: 0.8825,
@@ -173,7 +173,7 @@ class _MyColumnState extends State<MyColumn> {
                       onPressed: _sendVerificationCode,
                       child: const Text(
                         'Send',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: "GlutenBold"),
                       ),
                     ),
                   ),
@@ -209,7 +209,7 @@ Future sendEmail(
       }
     }),
   );
-  // Handle the response if needed
+  
   print('Email.js Response: ${response.statusCode}');
   print(verificationCode);
 }
@@ -255,7 +255,7 @@ class verifColumn extends StatelessWidget {
     print("Verification Code: $verificationCode");
 
     if (enteredCode == verificationCode) {
-      // Verification successful, navigate to the NewPasswordScreen
+      
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => newpasswordScreen()),
@@ -270,7 +270,7 @@ class verifColumn extends StatelessWidget {
             actions: <Widget>[
               TextButton(
                 onPressed: () {
-                  Navigator.of(context).pop(); // Close the dialog
+                  Navigator.of(context).pop(); 
                 },
                 child: Text('OK'),
               ),
@@ -572,7 +572,7 @@ class newpwdColumn extends StatelessWidget {
                       },
                       child: const Text(
                         'Save',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: 'GlutenBold'),
                       ),
                     ),
                   ),

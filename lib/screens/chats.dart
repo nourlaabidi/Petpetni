@@ -1,3 +1,4 @@
+import 'package:projet/discussions.dart';
 import 'package:projet/widgets/chat/newmessages.dart';
 import 'package:flutter/material.dart';
 import 'package:projet/widgets/chat/messages.dart';
@@ -22,7 +23,11 @@ class _ChatsState extends State<Chats> {
           IconButton(
             icon: const Icon(Icons.arrow_back), 
             color:Colors.white,
-            onPressed: () {},
+            onPressed: () {Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => Discussions()),
+                              );},
             ),
           title:  Row(
             children: [

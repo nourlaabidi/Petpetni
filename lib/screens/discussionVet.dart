@@ -1,17 +1,18 @@
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:projet/global.dart';
+import 'package:projet/screens/HomePage.dart';
 import 'package:projet/screens/chats.dart';
-import 'package:projet/screens/tips.dart';
 
 
-class Discussions extends StatefulWidget {
+class DiscussionsVet extends StatefulWidget {
   @override
-  _DiscussionsState createState() => _DiscussionsState();
+  _DiscussionsVetState createState() => _DiscussionsVetState();
 }
 
-class _DiscussionsState extends State<Discussions> {
+class _DiscussionsVetState extends State<DiscussionsVet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +25,7 @@ class _DiscussionsState extends State<Discussions> {
           onPressed: () {
             Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Astuces()), // Remplacez CalendarPage() par la page à laquelle vous souhaitez rediriger
+                            MaterialPageRoute(builder: (context) => HomePage()), // Remplacez CalendarPage() par la page à laquelle vous souhaitez rediriger
                           );
           },
         ),
@@ -122,3 +123,4 @@ class _DiscussionsState extends State<Discussions> {
     );
   }
 }
+

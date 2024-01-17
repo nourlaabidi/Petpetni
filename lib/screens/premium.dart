@@ -41,7 +41,7 @@ class _PremiumState extends State<Premium> {
           children: <Widget>[
             SizedBox(width: 25.0),
             Text(
-              'Subscription Plan',
+              'Payement',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -192,7 +192,7 @@ class _PremiumState extends State<Premium> {
                   ),
                   child: const Text(
                     'Pay 40 DT',
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20,fontFamily: 'GlutenBold'),
                   ),
                 ),
               ),

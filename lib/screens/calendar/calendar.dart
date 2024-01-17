@@ -51,6 +51,12 @@ List _getEventsForTheDay(DateTime day) {
             backgroundColor: Color.fromARGB(255, 237, 154, 9),
             elevation: 2,
             shadowColor: Colors.white,
+            leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); 
+          },
+          ),
             title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

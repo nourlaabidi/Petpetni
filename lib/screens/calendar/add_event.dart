@@ -41,7 +41,7 @@ class _AddEventState extends State<AddEvent> {
           IconButton(
             icon: const Icon(Icons.menu), 
             color:Colors.white,
-            onPressed: () {/* Action à effectuer lors du clic sur l'icône*/},
+            onPressed: () {},
             ),
           title: const Row(
             children: [

@@ -17,7 +17,7 @@ class SuccessPay extends StatelessWidget {
               SizedBox(
                 width: 25.0,
               ),
-              Text('Subscription Plan',
+              Text('payement',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -26,7 +26,7 @@ class SuccessPay extends StatelessWidget {
                     fontFamily: 'GlutenBold',
                   )),
               SizedBox(
-                width: 25.0,
+                width: 35,
               ),
               Container(
                 child: CircleAvatar(
@@ -36,48 +36,55 @@ class SuccessPay extends StatelessWidget {
               ),
             ],
           )),
-
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.fromLTRB(50, 0, 0, 0),
-                child: Image(
-              image: AssetImage("assets/successpay.png"),
-              width: 150,),
+          body: Center(
+  child: Container(
+   
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Image(
+          image: AssetImage("assets/successpay.png"),
+          width: 150,
+        ),
+        SizedBox(height: 20),
+        Text(
+          'Successful Payment',
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 2.0,
+            color: const Color.fromARGB(255, 0, 0, 0),
+            fontFamily: 'GlutenBold',
+          ),
+        ),
+        SizedBox(height: 40),
+        ElevatedButton.icon(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => Astuces(),
               ),
-              Container(
-            margin: EdgeInsets.fromLTRB(50, 20, 0, 0),
-            child: Text(
-                   'Payement Completed Succesfully',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2.0,
-                      color: const Color.fromARGB(255, 0, 0, 0),
-                      fontFamily: 'GlutenBold',
-                    ),
-            )
+            );
+          },
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          label: Text(
+            'Back to Home',
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'GlutenBold',
+            ),
           ),
-          Container(
-            margin: EdgeInsets.fromLTRB(60, 40, 0, 0),
-            child: ElevatedButton.icon(
-      onPressed: () {Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => Astuces()),
-                              );}, // Add home page 
-      icon: Icon(Icons.arrow_back),
-      label: Text('Back to Home'),
-      style: ElevatedButton.styleFrom(
-        primary: Color.fromARGB(255, 237, 154, 9), 
-        onPrimary: Colors.white,
-      ),
-    )
-          )
-          
-            ],
+          style: ElevatedButton.styleFrom(
+            primary: Color.fromARGB(255, 237, 154, 9),
           ),
+        )
+      ],
+    ),
+  ),
+),
+
     );
   }
 }

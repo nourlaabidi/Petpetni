@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:projet/screens/pet/pet_list.dart';
 import 'package:projet/screens/tips.dart';
 
 class AddPet extends StatefulWidget {
@@ -29,14 +30,11 @@ class _AddPetState extends State<AddPet> {
         backgroundColor: const Color.fromARGB(255, 237, 154, 9),
         elevation: 2, 
         shadowColor: Colors.white, 
-         leading:
-          IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Astuces()));
-            },
+         leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); 
+          },
           ),
           title: const Row(
             children: [
@@ -476,6 +474,10 @@ class _AddPetState extends State<AddPet> {
                           child: TextButton(
                             onPressed: () {
                               _addPet();
+                              Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>PetList() ),
+        );
                             },
                             style: TextButton.styleFrom(
                               padding: EdgeInsets.zero,

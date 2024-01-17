@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'discussionVet.dart';
+import 'package:projet/screens/about.dart';
+import 'package:projet/screens/calendar/calendar.dart';
+import 'package:projet/screens/discussionVet.dart';
+import 'package:projet/screens/pet/pet_list.dart';
+import 'package:projet/screens/side_bar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -43,7 +49,7 @@ class HomePage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.0,
                   color: Color.fromARGB(255, 0, 0, 0),
-                  fontFamily: 'GlutenSemiBold',
+                  fontFamily: 'GlutenBold',
                 ),
               ),
             ),
@@ -67,7 +73,7 @@ class HomePage extends StatelessWidget {
                           child: Text(
                             'Let\'s check your \nlatest activities',
                             style: TextStyle(
-                              fontSize: 24,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 1.0,
                               color: Color.fromARGB(255, 0, 0, 0),
@@ -96,17 +102,25 @@ class HomePage extends StatelessWidget {
                             width: 70,
                           ),
                         ),
-                        Container(
-                            margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
-                            child: Text(
-                              'Patients',
-                              style: TextStyle(
-                                fontSize: 20,
-                                letterSpacing: 1.0,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                fontFamily: 'GlutenSemiBold',
-                              ),
-                            ))
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PetList()), 
+              );
+                          },
+                          child: Container(
+                              margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                              child: Text(
+                                'Patients',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  letterSpacing: 1.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontFamily: 'GlutenSemiBold',
+                                ),
+                              )),
+                        )
                       ],
                     ),
                   ),
@@ -127,17 +141,25 @@ class HomePage extends StatelessWidget {
                             width: 65,
                           ),
                         ),
-                        Container(
-                            margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
-                            child: Text(
-                              'Conversations',
-                              style: TextStyle(
-                                fontSize: 19,
-                                letterSpacing: 1.0,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                fontFamily: 'GlutenSemiBold',
-                              ),
-                            ))
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DiscussionsVet()), 
+                          );
+                          },
+                          child: Container(
+                              margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                              child: Text(
+                                'Conversations',
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  letterSpacing: 1.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontFamily: 'GlutenSemiBold',
+                                ),
+                              )),
+                        )
                       ],
                     ),
                   ),
@@ -163,17 +185,25 @@ class HomePage extends StatelessWidget {
                             width: 70,
                           ),
                         ),
-                        Container(
-                            margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
-                            child: Text(
-                              'Calender',
-                              style: TextStyle(
-                                fontSize: 20,
-                                letterSpacing: 1.0,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                fontFamily: 'GlutenSemiBold',
-                              ),
-                            ))
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => EventCalendarScreen()), 
+              );
+                          },
+                          child: Container(
+                              margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                              child: Text(
+                                'Calender',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  letterSpacing: 1.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontFamily: 'GlutenBold',
+                                ),
+                              )),
+                        )
                       ],
                     ),
                   ),
@@ -194,17 +224,25 @@ class HomePage extends StatelessWidget {
                             width: 65,
                           ),
                         ),
-                        Container(
-                            margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
-                            child: Text(
-                              'More Info',
-                              style: TextStyle(
-                                fontSize: 19,
-                                letterSpacing: 1.0,
-                                color: Color.fromARGB(255, 255, 255, 255),
-                                fontFamily: 'GlutenSemiBold',
-                              ),
-                            ))
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => About()), 
+                          );
+                          },
+                          child: Container(
+                              margin: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                              child: Text(
+                                'More Info',
+                                style: TextStyle(
+                                  fontSize: 19,
+                                  letterSpacing: 1.0,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                  fontFamily: 'GlutenSemiBold',
+                                ),
+                              )),
+                        )
                       ],
                     ),
                   ),
@@ -214,6 +252,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+    drawer: Sidebar()
     );
   }
 }

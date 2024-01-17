@@ -21,9 +21,9 @@ class _PaymeState extends State<Payme> {
                 SizedBox(
                   width: 25.0,
                 ),
-                Text('Subscription Plan',
+                Text('payement',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 17,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 2.0,
                       color: const Color.fromARGB(255, 255, 255, 255),
@@ -76,7 +76,7 @@ class _PaymeState extends State<Payme> {
                     TextSpan(
                       text: 'Start with ',
                       style: TextStyle(
-                        fontFamily: 'GlutenRegular',
+                        fontFamily: 'Gluten',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         height: 2.09375,
@@ -87,7 +87,7 @@ class _PaymeState extends State<Payme> {
                     TextSpan(
                       text: '7 days free trail ',
                       style: TextStyle(
-                        fontFamily: 'GlutenRegular',
+                        fontFamily: 'Gluten',
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 2.0,
@@ -97,7 +97,7 @@ class _PaymeState extends State<Payme> {
                     TextSpan(
                       text: 'Upgrade or downgrade anytime',
                       style: TextStyle(
-                        fontFamily: 'GlutenRegular',
+                        fontFamily: 'Gluten',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                         height: 2.09375,
@@ -178,7 +178,7 @@ class _PaymeState extends State<Payme> {
                                 TextSpan(
                                   text: '40',
                                   style: TextStyle(
-                                    fontFamily: 'GlutenRegular',
+                                    fontFamily: 'Gluten',
                                     fontSize: 33,
                                     fontWeight: FontWeight.bold,
                                     height: 2.09375,
@@ -189,7 +189,7 @@ class _PaymeState extends State<Payme> {
                                 TextSpan(
                                   text: 'Dt',
                                   style: TextStyle(
-                                    fontFamily: 'GlutenRegular',
+                                    fontFamily: 'Gluten',
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                     height: 2.09375,
@@ -200,7 +200,7 @@ class _PaymeState extends State<Payme> {
                                 TextSpan(
                                   text: '/ Month',
                                   style: TextStyle(
-                                    fontFamily: 'GlutenRegular',
+                                    fontFamily: 'Gluten',
                                     fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                     height: 2.09375,
@@ -305,7 +305,7 @@ class _PaymeState extends State<Payme> {
                       ),
                       child: const Text(
                         'Continue',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,fontFamily: 'GlutenBold'),
                       ),
                     )))
           ],

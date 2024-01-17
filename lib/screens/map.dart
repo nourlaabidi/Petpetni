@@ -14,7 +14,7 @@ class CurrentLocationScreen extends StatefulWidget {
 class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
   late GoogleMapController googleMapController;
 
-  static const CameraPosition initialCameraPosition = CameraPosition(target: LatLng(36.849558416177466, 10.18853855387803), zoom: 14);
+  static const CameraPosition initialCameraPosition = CameraPosition(target: LatLng(36.849558416177466, 10.18853855387803), zoom: 12);
 
   Set<Marker> markers = {};
   List<Marker> initialMarkers = [];
@@ -23,7 +23,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
   void initState() {
     super.initState();
     
-    _getVetClinics(); // Appel de la fonction pour récupérer les données de Firestore
+    _getVetClinics(); 
   }
 
   @override
@@ -34,12 +34,10 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
             elevation: 2,
             shadowColor: Colors.white,
             leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Astuces()));
-            },
+            icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context); 
+          },
           ),
             title: const Text("Google maps",style: TextStyle(color: Colors.white,fontFamily: ''),)),
       body: GoogleMap(
@@ -56,7 +54,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
           Position position = await _determinePosition();
 
           googleMapController
-              .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(position.latitude, position.longitude), zoom: 14)));
+                          .animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(position.latitude, position.longitude), zoom: 14)));
 
 
           markers.clear();
@@ -82,10 +80,10 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
     // Récupérer les données de Firestore
     final clinics = await FirebaseFirestore.instance.collection('VetClinic').get();
     for (final clinic in clinics.docs) {
-      final point = clinic['point'] as GeoPoint; // Récupérer le champ point (de type GeoPoint)
-      final name = clinic['nom'] as String; // Récupérer le champ nom
+      final point = clinic['point'] as GeoPoint; 
+      final name = clinic['nom'] as String; 
       final address = clinic['adresse'] as String;
-      final tel = clinic['tel'] as String; // Récupérer le champ adresse
+      final tel = clinic['tel'] as String; 
        Marker marker = Marker(
         markerId: MarkerId(clinic.id),
         position: LatLng(point.latitude, point.longitude),
@@ -134,7 +132,7 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop(); // Ferme la boîte de dialogue
+              Navigator.of(context).pop(); 
             },
             child: Text('Close', style: TextStyle(color: Color.fromARGB(255, 237, 154, 9))),
           ),

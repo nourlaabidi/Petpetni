@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projet/screens/tips.dart';
 
 class About extends StatefulWidget {
   const About({super.key});
@@ -12,44 +13,36 @@ class _AboutState extends State<About> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 237, 154, 9),
-        elevation: 2, 
-        shadowColor: Colors.white, 
-         leading:
-          IconButton(
-            icon: const Icon(Icons.menu), 
-            color:Colors.white,
-            onPressed: () {/* Action à effectuer lors du clic sur l'icône*/},
-            ),
-          title: const Row(
-            children: [
-              Expanded(
-                flex:1,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/whitepaw.png"), 
-                  backgroundColor: Colors.transparent, 
-                ),
-              ),
-              SizedBox(width: 30),
-              Expanded(
-                flex:4,
-                child: Text('Petpetni', style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 35,
-                fontFamily: "GlutenB"
-                ),),
-              ),
-              Expanded (
-                flex:1,
-                child: CircleAvatar(
-                backgroundImage: AssetImage("assets/claudio.png"),
-                //backgroundColor: Colors.white, 
-  
-                ),
-              ),
-            ],
+            backgroundColor: Color.fromARGB(255, 237, 154, 9),
+            elevation: 2,
+            shadowColor: Colors.white,
+            leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+            Navigator.pop(context); 
+          },
           ),
-      ),
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
+                  child: Image(
+                    image: AssetImage("assets/logoPetpetni.png"),
+                    width: 230,
+                  ),
+                ),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Container(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/claudio.png"),
+                    backgroundColor: Colors.white,
+                  ),
+                ),
+              ],
+            )),
       body:  Container(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -66,7 +59,11 @@ class _AboutState extends State<About> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                     TextButton(
-                    onPressed: () {Navigator.pushNamed(context, '/Astuces'); },
+                    onPressed: () {Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => Astuces()),
+                              ); },
                     style: TextButton.styleFrom(
                     backgroundColor: Colors.white,
                     //disabledForegroundColor: Colors.black,
@@ -79,7 +76,7 @@ class _AboutState extends State<About> {
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
-                            fontSize: 20,
+                            fontSize: 17,
                             fontFamily: "Gluten",
                           ),
                         ),
@@ -99,7 +96,7 @@ class _AboutState extends State<About> {
                             style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
-                              fontSize: 20,
+                              fontSize: 17,
                               fontFamily: "Gluten",
                             ),
                           ),
@@ -119,7 +116,7 @@ class _AboutState extends State<About> {
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
-                            fontSize: 20,
+                            fontSize: 17,
                             fontFamily: "Gluten",
                           ),
                         ),
@@ -133,24 +130,24 @@ class _AboutState extends State<About> {
                     style: TextStyle(
                     color:Color.fromARGB(255, 237, 154, 9),
                     fontWeight: FontWeight.w700,
-                    fontSize: 30.0,
-                    fontFamily: "GlutenB"),
+                    fontSize: 25.0,
+                    fontFamily: "GlutenBold"),
                   ),
                 ),
-                const SizedBox(height:10) ,
+                const SizedBox(height:7) ,
                 const Center(
                    child: Text(
                       'is a mobile application developed by 5 students of the high school of communication of tunis in th context of a study project . ', 
                       style: TextStyle(
                       //color:Color.fromARGB(255, 237, 154, 9),
                       fontWeight: FontWeight.w700,
-                      fontSize: 20.0,
+                      fontSize: 17.0,
                       wordSpacing: 4,
-                      fontFamily: "GlutenB"),
+                      fontFamily: "GlutenBold"),
                        textAlign: TextAlign.center,
                     ),
                  ),
-                const SizedBox(height:30) ,
+                const SizedBox(height:25) ,
                 const Center(
                   child:Text.rich(TextSpan(
                     children:<TextSpan>[
@@ -159,27 +156,27 @@ class _AboutState extends State<About> {
                           style: TextStyle(
                           //color:Color.fromARGB(255, 237, 154, 9),
                           fontWeight: FontWeight.w700,
-                          fontSize: 20.0,
+                          fontSize: 17.0,
                           wordSpacing: 4,
-                          fontFamily: "GlutenB"),
+                          fontFamily: "GlutenBold"),
                       ),
                       TextSpan(
                            text:'to solve pet awners problems , facilitate their tasks ',
                           style: TextStyle(
                           color:Color.fromARGB(255, 237, 154, 9),
                           fontWeight: FontWeight.w700,
-                          fontSize: 20.0,
+                          fontSize: 17.0,
                           wordSpacing: 4,
-                          fontFamily: "GlutenB"),
+                          fontFamily: "GlutenBold"),
                       ),
                       TextSpan(
                            text:'and ',
                           style: TextStyle(
                           //color:Color.fromARGB(255, 237, 154, 9),
                           fontWeight: FontWeight.w700,
-                          fontSize: 20.0,
+                          fontSize: 17.0,
                           wordSpacing: 4,
-                          fontFamily: "GlutenB"),
+                          fontFamily: "GlutenBold"),
                       ),
                       TextSpan(
                            text:'follow their pets health. ',
@@ -188,13 +185,13 @@ class _AboutState extends State<About> {
                           fontWeight: FontWeight.w700,
                           fontSize: 20.0,
                           wordSpacing: 4,
-                          fontFamily: "GlutenB"),
+                          fontFamily: "GlutenBold"),
                       ),
                     ],
                   ),
                   ),
                 ),
-                const SizedBox(height:30) ,
+                const SizedBox(height:25) ,
                 const Center(
                   child:Text(
                     'Follow us on social media to get more information and updates about the application.',
@@ -202,12 +199,12 @@ class _AboutState extends State<About> {
                     style: TextStyle(
                     //color:Color.fromARGB(255, 237, 154, 9),
                     fontWeight: FontWeight.w700,
-                    fontSize: 20.0,
+                    fontSize: 17.0,
                     wordSpacing: 4,
-                    fontFamily: "GlutenB"),
+                    fontFamily: "GlutenBold"),
                   ),
                 ),
-                const SizedBox(height:30) ,
+                const SizedBox(height:25) ,
                  Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children:<Widget> [
@@ -216,7 +213,7 @@ class _AboutState extends State<About> {
                     Center(
                       child: IconButton(
                         onPressed: (){},
-                        icon:const Image(image: AssetImage('assets/fcb.png'),width: 80,height: 80),  
+                        icon:const Image(image: AssetImage('assets/fcb.png'),width: 45,height: 45),  
                     ),
                     ),
                     const SizedBox(height:5),
@@ -234,7 +231,7 @@ class _AboutState extends State<About> {
                     Center(
                       child: IconButton(
                         onPressed: (){},
-                        icon:const Image(image: AssetImage("assets/insta.png"),width: 80,height: 80),
+                        icon:const Image(image: AssetImage("assets/insta.png"),width: 45,height: 45),
                     ),),
                     const SizedBox(height: 5),
                     const Text(

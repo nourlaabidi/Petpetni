@@ -167,7 +167,7 @@ class _AstucesState extends State<Astuces> {
                         child: Text(
                           'Dogs',
                           style: TextStyle(
-                            fontFamily: 'GlutenB',
+                            fontFamily: 'GlutenBold',
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                             height: 0.8825,
@@ -226,7 +226,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Cats',
                         style: TextStyle(
-                          fontFamily: 'GlutenB',
+                          fontFamily: 'GlutenBold',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,
@@ -285,7 +285,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Rabbits',
                         style: TextStyle(
-                          fontFamily: 'GlutenB',
+                          fontFamily: 'GlutenBold',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,
@@ -344,7 +344,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Hamesters',
                         style: TextStyle(
-                          fontFamily: 'GlutenB',
+                          fontFamily: 'GlutenBold',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,
@@ -403,7 +403,7 @@ class _AstucesState extends State<Astuces> {
                       child: Text(
                         'Sheeps',
                         style: TextStyle(
-                          fontFamily: 'GlutenB',
+                          fontFamily: 'GlutenBold',
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                           height: 0.8825,

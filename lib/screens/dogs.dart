@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projet/screens/profile.dart';
+import 'package:projet/screens/side_bar.dart';
 import 'health.dart';
 import 'nutrition.dart';
+import 'tips.dart';
 
 
 class Dogs extends StatefulWidget {
@@ -57,7 +59,7 @@ class _DogsState extends State<Dogs> {
                               onTap: (){Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => Tips()),
+                                    builder: (_) => Astuces()),
                               );},
                               child: const BackButtonIcon()),
                              const SizedBox(height:40,),
@@ -69,7 +71,7 @@ class _DogsState extends State<Dogs> {
                                   style: TextStyle(
                                     fontWeight: FontWeight.w900,
                                     fontSize: 18,
-                                    fontFamily: "GlutenSemiBold"
+                                    fontFamily: "GlutenBold"
                                   ),),
                              ),
                              const SizedBox(height: 10,),
@@ -79,6 +81,7 @@ class _DogsState extends State<Dogs> {
                                   'Discover expert tips and tricks to keep your furry friend happy and healthy',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                     fontFamily: "Gluten"
@@ -134,7 +137,7 @@ class _DogsState extends State<Dogs> {
                                         color: Colors.orange[900],
                                         fontWeight: FontWeight.w900,
                                         fontSize: 16,
-                                        fontFamily: "GlutenSemiBold"
+                                        fontFamily: "GlutenBold"
                                       ),
                                     )],),
                               ),
@@ -163,7 +166,7 @@ class _DogsState extends State<Dogs> {
                                           color: Colors.orange[900],
                                           fontWeight: FontWeight.w900,
                                           fontSize: 16,
-                                          fontFamily: "GlutenSemiBold"
+                                          fontFamily: "GlutenBold"
                                         ),
                                       )],),
                                    ),
@@ -192,7 +195,7 @@ class _DogsState extends State<Dogs> {
                                             color: Colors.orange[900],
                                             fontWeight: FontWeight.w900,
                                             fontSize: 16,
-                                            fontFamily: "GlutenSemiBold"
+                                            fontFamily: "GlutenBold"
                                           ),
                                         )],),
                                     ),
@@ -224,7 +227,7 @@ class _DogsState extends State<Dogs> {
                                       color: Colors.orange[900],
                                       fontWeight: FontWeight.w900,
                                       fontSize: 16,
-                                      fontFamily: "GlutenSemiBold"
+                                      fontFamily: "GlutenBold"
                                     ),
                                   )],),
                             ),
@@ -257,7 +260,7 @@ class _DogsState extends State<Dogs> {
                                       color: Colors.orange[900],
                                       fontWeight: FontWeight.w900,
                                       fontSize: 16,
-                                      fontFamily: "GlutenSemiBold"
+                                      fontFamily: "GlutenBold"
                                     ),
                                                                  )],),
                                  ),
@@ -286,7 +289,7 @@ class _DogsState extends State<Dogs> {
                                       color: Colors.orange[900],
                                       fontWeight: FontWeight.w900,
                                       fontSize: 16,
-                                      fontFamily: "GlutenSemiBold"
+                                      fontFamily: "GlutenBold"
                                     ),
                                                                  )],),
                                  ),
@@ -298,6 +301,6 @@ class _DogsState extends State<Dogs> {
             ],
         ),
       ),
-    );
+    drawer: Sidebar());
   }
 }

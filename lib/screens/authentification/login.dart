@@ -41,7 +41,14 @@ class _MyColumnState extends State<MyColumn> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: Text("Login Page",
+        style: TextStyle(
+                        fontFamily: 'GlutenBold',
+                        fontSize: 26,
+                        fontWeight: FontWeight.w400,
+                        height: 0.8825,
+                        color:  Color.fromARGB(255, 237, 154, 9),
+                      ),),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -68,7 +75,7 @@ class _MyColumnState extends State<MyColumn> {
                     child: Text(
                       'Welcome',
                       style: TextStyle(
-                        fontFamily: 'Gluten',
+                        fontFamily: 'GlutenBold',
                         fontSize: 26,
                         fontWeight: FontWeight.w400,
                         height: 0.8825,
@@ -84,7 +91,7 @@ class _MyColumnState extends State<MyColumn> {
                         child: Text(
                           'Email',
                           style: TextStyle(
-                            fontFamily: 'Gluten',
+                            fontFamily: 'GlutenBold',
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                             height: 0.8825,
@@ -100,7 +107,7 @@ class _MyColumnState extends State<MyColumn> {
                           },
                           decoration: const InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Email',
+                            labelText: ('Email'),
                             hintText: 'Enter valid email id as abc@gmail.com',
                           ),
                         ),
@@ -110,7 +117,7 @@ class _MyColumnState extends State<MyColumn> {
                         child: Text(
                           'Password',
                           style: TextStyle(
-                            fontFamily: 'Gluten',
+                            fontFamily: 'GlutenBold',
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
                             height: 0.8825,
@@ -145,10 +152,11 @@ class _MyColumnState extends State<MyColumn> {
                               );
                             },
                             child: const Text(
-                              'Forgot Password ?',
+                              'Forget Password ?',
                               style: TextStyle(
                                   color: Color.fromARGB(255, 0, 0, 0),
-                                  fontSize: 15),
+                                  fontSize: 15,
+                                  fontFamily: 'Gluten',decoration: TextDecoration.underline,),
                             ),
                           ),
                         ],
@@ -191,7 +199,7 @@ class _MyColumnState extends State<MyColumn> {
                       },
                       child: const Text(
                         'Login',
-                        style: TextStyle(color: Colors.white, fontSize: 25),
+                        style: TextStyle(color: Colors.white, fontSize: 25,fontFamily: "GlutenBold"),
                       ),
                     ),
                   ),
